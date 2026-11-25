@@ -1,0 +1,46 @@
+/* Final polish: small, safe improvements shared by every page. */
+:root { accent-color: var(--accent, #1aafff); scroll-padding-top: 4.5rem; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+html { -webkit-tap-highlight-color: transparent; }
+[hidden] { display: none !important; }
+::selection { background: #1a7fd0; color: #fff; }
+a { text-underline-offset: .18em; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible, summary:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent, #1aafff); outline-offset: 2px; border-radius: .3rem; }
+button, .button, [role="button"], summary, select, label[for] { touch-action: manipulation; }
+button:not(:disabled):active, .button:active { transform: translateY(1px); }
+button:disabled, [aria-disabled="true"], input:disabled, select:disabled { opacity: .5; cursor: not-allowed; }
+::placeholder { color: #6f7a87; opacity: 1; }
+select, option { background-color: #1b2027; color: #e6e9ed; }
+summary { cursor: pointer; }
+summary::marker { color: var(--muted, #8b95a1); }
+kbd { font: .85em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: #232a33; border: 1px solid #3a4452; border-bottom-width: 2px; border-radius: .3rem; padding: 0 .35em; white-space: nowrap; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+h1, h2, h3 { text-wrap: balance; }
+p, li { text-wrap: pretty; }
+img.pixel { image-rendering: pixelated; image-rendering: crisp-edges; }
+dialog::backdrop { background: rgba(5, 8, 12, .72); backdrop-filter: blur(3px); }
+* { scrollbar-width: thin; scrollbar-color: #3a4452 transparent; }
+body { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
+@media (pointer: coarse) { .button, button, select, summary { min-height: 44px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; } }
+@media (forced-colors: active) { a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid Highlight; } .button, button { border: 1px solid ButtonText; } }
+
+/* skip link, back-to-top, banners, footer (added by polish.js) */
+.ejs-skip { position: fixed; left: .5rem; top: -4rem; z-index: 100000; background: #1a7fd0; color: #fff; padding: .6rem 1rem; border-radius: .5rem; text-decoration: none; font-weight: 600; transition: top .15s; }
+.ejs-skip:focus { top: .5rem; }
+.ejs-top { position: fixed; right: max(1rem, env(safe-area-inset-right)); bottom: max(1rem, env(safe-area-inset-bottom)); z-index: 9000; width: 2.8rem; height: 2.8rem; border-radius: 50%; border: 1px solid #3a4452; background: #1b2027; color: #e6e9ed; font-size: 1.2rem; cursor: pointer; box-shadow: 0 2px 10px rgba(0, 0, 0, .4); }
+.ejs-top:hover { border-color: var(--accent, #1aafff); }
+.ejs-note { position: fixed; left: 50%; bottom: max(1rem, env(safe-area-inset-bottom)); transform: translateX(-50%); z-index: 99999; max-width: min(32rem, 92vw); background: #1b2027; color: #e6e9ed; border: 1px solid #3a4452; border-radius: .6rem; padding: .6rem .9rem; box-shadow: 0 6px 24px rgba(0, 0, 0, .5); font-size: .92rem; }
+.ejs-warnbar { background: #4a3410; color: #ffe2a8; border-bottom: 1px solid #8a6420; padding: .6rem 1rem; text-align: center; font-size: .92rem; }
+.ejs-footer { max-width: 62rem; margin: 2rem auto 1.5rem; padding: 0 1rem; text-align: center; color: var(--muted, #8b95a1); font-size: .82rem; }
+.ejs-footer a { color: inherit; }
+html.ejs-offline body::after { content: "Offline"; position: fixed; left: .6rem; top: .6rem; z-index: 99998; background: #4a3410; color: #ffe2a8; border-radius: 1rem; padding: .1rem .6rem; font-size: .72rem; pointer-events: none; }
+
+@media print {
+    html, body { background: #fff !important; color: #000 !important; height: auto !important; }
+    .button, button, .ejs-top, .ejs-skip, .ejs-note, .ejs-warnbar, nav, dialog, video, canvas, .dl-primary { display: none !important; }
+    .card, section { border: 1px solid #bbb !important; background: #fff !important; break-inside: avoid; }
+    a { color: #000 !important; text-decoration: underline; }
+    a[href^="http"]::after { content: " (" attr(href) ")"; font-size: .8em; }
+    * { color: #000 !important; }
+}

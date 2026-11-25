@@ -1,0 +1,9 @@
+{
+    "appId": "io.emulatorjs.local",
+    "appName": "EmulatorJS",
+    "webDir": "www",
+    "backgroundColor": "#111418",
+    "server": { "androidScheme": "https", "iosScheme": "app" },
+    "android": { "allowMixedContent": false, "webContentsDebuggingEnabled": false },
+    "ios": { "contentInset": "always", "limitsNavigationsToAppBoundDomains": false }
+}

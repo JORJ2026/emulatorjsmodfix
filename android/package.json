@@ -1,0 +1,21 @@
+{
+    "name": "emulatorjs-mobile",
+    "version": "4.3.0-local.40",
+    "private": true,
+    "description": "Capacitor wrapper that packages the site as an Android app (APK) and an iPhone/iPad Xcode project.",
+    "scripts": {
+        "prepare-site": "node ../tools/stage-site.mjs www",
+        "add:android": "cap add android",
+        "add:ios": "cap add ios",
+        "sync": "cap sync"
+    },
+    "dependencies": {
+        "@capacitor/android": "^6.1.2",
+        "@capacitor/core": "^6.1.2",
+        "@capacitor/ios": "^6.1.2"
+    },
+    "devDependencies": {
+        "@capacitor/cli": "^6.1.2",
+        "@capacitor/assets": "^3.0.5"
+    }
+}

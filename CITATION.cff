@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use this project, please cite it as below."
+title: "EmulatorJS local build"
+type: software
+license: GPL-3.0
+version: 4.3.0-local.40
+repository-code: "https://github.com/OWNER/REPO"
+abstract: "A browser retro-game site that runs entirely from local files, built on EmulatorJS."

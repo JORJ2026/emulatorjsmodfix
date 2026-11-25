@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Privacy – EmulatorJS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="application-name" content="EmulatorJS">
+<meta name="msapplication-config" content="browserconfig.xml">
+<meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#111418">
+    <meta name="description" content="What EmulatorJS stores and what never leaves your device.">
+    <link rel="icon" href="docs/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="EmulatorJS">
+    <meta property="og:title" content="Privacy – EmulatorJS">
+    <meta property="og:description" content="What EmulatorJS stores and what never leaves your device.">
+    <meta property="og:image" content="assets/icons/social-card.png">
+    <meta property="og:url" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Privacy – EmulatorJS">
+    <meta name="twitter:description" content="What EmulatorJS stores and what never leaves your device.">
+    <meta name="twitter:image" content="assets/icons/social-card.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <script src="assets/early-view.js"></script>
+    <link rel="stylesheet" href="assets/app.css">
+    <link rel="stylesheet" href="assets/download.css">
+<link rel="stylesheet" href="assets/polish.css">
+<noscript><style>.ejs-nojs{display:block!important}</style></noscript>
+</head>
+<body>
+    <main class="dl-page" style="max-width:46rem">
+        <a class="button" href="index.html">&#8592; Home</a>
+        <h1>Privacy</h1>
+
+        <p class="muted">Short version: there are no accounts, no tracking and no ads. Your games and saves stay on your device.</p>
+        <section class="card"><h2>What is kept on your device</h2><ul>
+            <li><b>Your games</b> in My Collection, and <b>save states, save files and screenshots</b>, are stored in your browser (IndexedDB and local storage).</li>
+            <li><b>Settings</b> such as picture options, key mappings, favourites, play time and notes are stored in your browser.</li>
+            <li><b>A copy of the site</b> (pages, scripts and the emulator cores you have used) is cached by the service worker so the app works offline.</li>
+        </ul>
+        <p class="dl-note">Clearing the site's data in your browser removes all of it. Use <i>Export options</i> in the F1 panel first if you want a backup.</p></section>
+        <section class="card"><h2>What is sent over the network</h2><ul>
+            <li>The site's own files are loaded from the server that hosts it. <b>Game files and saves are never uploaded.</b></li>
+            <li>The <i>Get the app</i> page asks GitHub (api.github.com) for the list of release files. GitHub sees your address, as with any web request.</li>
+            <li><i>Report a problem</i> opens a GitHub issue form with your browser details filled in. Nothing is sent until you press Submit there.</li>
+            <li>Netplay, if you turn it on, connects to the server you choose.</li>
+        </ul></section>
+        <section class="card"><h2>What is not collected</h2><p>No cookies, analytics, advertising identifiers, fingerprinting, or account data. The desktop and Android apps include the same files and make no extra connections.</p></section>
+        <section class="card"><h2>Your games</h2><p>Only play games you have the right to use: homebrew, public domain, licensed to you, or backups of games you own where your local law allows it. The site ships no commercial games.</p></section>
+
+        <p class="dl-note"><a href="download.html">Get the app</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="about.html">About</a> &middot; <a href="support.html">Help</a> &middot; <a href="status.html">Status</a></p>
+    </main>
+<noscript><p class="ejs-warnbar">This site needs JavaScript to run the emulators. Please turn it on.</p></noscript>
+<script src="assets/polish.js" defer></script>
+</body>
+</html>

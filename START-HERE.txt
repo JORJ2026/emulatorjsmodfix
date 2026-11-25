@@ -1,0 +1,50 @@
+EMULATORJS - QUICK START (read this first)
+==========================================
+
+This folder is the whole website. Upload its CONTENTS (not the folder itself) to a GitHub repository.
+
+WHERE THINGS GO
+---------------
+Emulator cores ........ data/cores/        ALREADY INCLUDED: all 187 core files (48 emulators, 284 MB)
+                                           the app expects exactly these names, e.g. snes9x-wasm.7z
+                                           If you add or remove a core, run:  node tools/generate-core-manifest.mjs
+
+Your own game files ... data/<SYSTEM>/     folders: A2600  GB  GBA  GBC  GG  N64  NES  SNES
+                                           after adding files run:  node tools/generate-rom-index.mjs
+                                           (on GitHub the "Update game and core indexes" action does this for you)
+                                           more systems: add a line to data/platforms.json and make a folder
+
+Bundled homebrew ...... homebrew/<game>/   10 games already included (game.json + ROM + screenshot)
+                                           new one: npm run homebrew:new   then   node tools/generate-homebrew-index.mjs
+
+BIOS files ............ not stored on the site. Drop the BIOS file onto the Basic page together with the game.
+                        (Only use BIOS files you have the right to use.)
+
+ROMs in public pages .. keep roms/ EMPTY. Only publish homebrew, public-domain or licensed games.
+
+Player guide (PDF) .... guide/EmulatorJS-Player-Guide.pdf   (already linked from the site)
+
+PUBLISH IN 5 STEPS
+------------------
+1. Make a new GitHub repository. Upload everything in this folder
+   (the web uploader takes about 100 files at a time; for the cores use GitHub Desktop or git: it is easier).
+2. Edit nothing, then run once on your computer (needs Node.js):  node tools/set-repo.mjs YOURNAME/YOURREPO
+   (or edit "repo" in release-config.json by hand; on github.io the site works it out by itself)
+3. Settings > Pages > Source: GitHub Actions
+4. Settings > Actions > General > Workflow permissions: Read and write
+5. Push to the main branch. In a minute the site is at https://YOURNAME.github.io/YOURREPO/
+
+MAKE THE DOWNLOADS (Windows, Mac, Linux, Android, iPhone project)
+----------------------------------------------------------------
+   git tag v4.3.0-local.39
+   git push origin v4.3.0-local.39
+GitHub builds the installers and puts them on the Releases page; the site's "Get the app" page and
+the F1 settings panel (Install and downloads) link to them automatically.
+iPhone and iPad: Safari > Share > Add to Home Screen (works without any installer).
+
+CHECK BEFORE PUBLISHING
+-----------------------
+   node tools/preflight.mjs        (should end with "0 failed")
+
+MORE: INSTALL.md, RELEASING.md (signing, licences), THIRD-PARTY-NOTICES.md (some cores are non-commercial:
+free to share, not to sell).

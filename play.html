@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Playing – EmulatorJS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="application-name" content="EmulatorJS">
+<meta name="msapplication-config" content="browserconfig.xml">
+    <meta name="theme-color" content="#111418">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="EmulatorJS">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+    <link rel="icon" href="docs/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+    <meta name="description" content="Play retro games in your browser. Runs from local files and works offline.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="EmulatorJS">
+    <meta property="og:title" content="Playing – EmulatorJS">
+    <meta property="og:description" content="Play retro games in your browser. Runs from local files and works offline.">
+    <meta property="og:image" content="assets/icons/social-card.png">
+    <meta property="og:url" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Playing – EmulatorJS">
+    <meta name="twitter:description" content="Play retro games in your browser. Runs from local files and works offline.">
+    <meta name="twitter:image" content="assets/icons/social-card.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <script src="assets/early-view.js"></script>
+    <link rel="stylesheet" href="assets/app.css">
+<link rel="stylesheet" href="assets/polish.css">
+<noscript><style>.ejs-nojs{display:block!important}</style></noscript>
+</head>
+<body class="play">
+    <header id="bar">
+        <a id="home" class="button" href="index.html" title="Back to the home page and game library">&#8592; Home</a>
+        <a id="links" class="button" href="links.html" title="All parts of this site, including ObsoleteMod">Links</a>
+        <h1 id="title">Loading…</h1>
+        <div class="bar-actions d-only">
+            <button id="prevBtn" class="button" type="button" hidden aria-label="Previous game">&#8249;</button>
+            <button id="nextBtn" class="button" type="button" hidden aria-label="Next game">&#8250;</button>
+            <button id="randomBtn" class="button" type="button" hidden aria-label="Random game">&#127922;</button>
+            <button id="favBtn" class="button" type="button" hidden aria-pressed="false">&#9734;</button>
+            <button id="saveBtn" class="button" type="button" hidden title="Quick save (F2)" aria-label="Quick save">&#128190;</button>
+            <button id="loadBtn" class="button" type="button" hidden title="Quick load (F4)" aria-label="Quick load">&#128194;</button>
+            <button id="shotBtn" class="button" type="button" hidden title="Screenshot (F8)" aria-label="Screenshot">&#128247;</button>
+            <button id="infoBtn" class="button" type="button" hidden title="Game details, checksums and the core it runs on">Info</button>
+            <button id="momentBtn" class="button" type="button" hidden title="Copy a link that opens this game at this exact moment">Share moment</button>
+            <button id="pipBtn" class="button" type="button" hidden title="Keep the game in a small window while you use other apps">PiP</button>
+            <button id="shareBtn" class="button" type="button" hidden title="Copy or share a link that opens this game">Share</button>
+            <button id="fsBtn" class="button" type="button" hidden title="Full screen (F11)">&#x26F6; Full screen</button>
+            <button id="hideBarBtn" class="button" type="button" hidden title="Hide this bar for a bigger picture">Hide bar</button>
+        </div>
+        <button id="menuBtn" class="icon-btn m-only" type="button" aria-label="Game menu" aria-controls="sheet" aria-expanded="false">&#9776;</button>
+        <div class="pickers">
+            <label for="platformSelect">Platform</label>
+            <select id="platformSelect" title="Choose a console to list its games"></select>
+            <label for="gameSelect">Game</label>
+            <select id="gameSelect" title="Choose a game to start it"></select>
+        </div>
+        <div class="pickers">
+            <label for="engineSelect">Engine</label>
+            <select id="engineSelect" title="Which emulation engine runs the game; changing it restarts the game"></select>
+        </div>
+        <span id="hint" class="muted small hint"></span>
+        <div id="engineTools" class="engine-tools"></div>
+    </header>
+    <main id="display"><div id="game"></div></main>
+    <button id="showBar" class="show-bar" type="button" hidden aria-label="Show the bar">&#9776; Bar</button>
+    <!-- Phone view: the bar hides in landscape; this button brings the game menu back -->
+    <button id="floatMenu" class="m-only" type="button" aria-label="Game menu" aria-controls="sheet">&#8943;</button>
+    <div id="sheet" class="sheet" hidden>
+        <div class="sheet-backdrop" data-close></div>
+        <section class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+            <div class="sheet-grab" data-close aria-hidden="true"></div>
+            <header class="sheet-head">
+                <h2 id="sheetTitle">Game menu</h2>
+                <button class="icon-btn" type="button" data-close aria-label="Close menu">&#10005;</button>
+            </header>
+            <p id="sheetStatus" class="muted small">The game is paused while this menu is open.</p>
+            <div id="sheetTools" class="sheet-tools"></div>
+            <div id="sheetPickers" class="sheet-pickers"></div>
+            <div class="sheet-row" id="sheetControls"></div>
+            <nav class="sheet-links" aria-label="Site">
+                <a class="button" href="index.html">Home</a>
+                <a class="button" href="play.html">Library</a>
+                <a class="button" href="links.html">Links</a>
+                <a class="button" href="reference.html">Docs</a>
+                <a class="button" href="guide/EmulatorJS-Player-Guide.pdf" target="_blank" rel="noopener">Player guide (PDF)</a>
+                <a class="button" href="download.html">Get the app</a>
+                <button id="sheetShare" class="button" type="button" hidden>Share game</button>
+                <button id="sheetInfo" class="button" type="button" hidden>Game info</button>
+                <button id="sheetFav" class="button" type="button" hidden aria-pressed="false">&#9734; Favourite</button>
+                <button id="sheetSave" class="button" type="button" hidden>Quick save</button>
+                <button id="sheetLoad" class="button" type="button" hidden>Quick load</button>
+                <button id="sheetShot" class="button" type="button" hidden>Screenshot</button>
+                <button id="sheetPrev" class="button" type="button" hidden>&#8249; Previous</button>
+                <button id="sheetNext" class="button" type="button" hidden>Next &#8250;</button>
+                <button id="sheetRandom" class="button" type="button" hidden>Random game</button>
+            </nav>
+            <p id="a2hs" class="a2hs" hidden>For full screen on iPhone: tap <strong>Share</strong> <span aria-hidden="true">&#x2191;&#xFE0E;</span> then <strong>Add to Home Screen</strong>, and start games from the new icon. Games then open full screen, and Safari keeps your saves more reliably.</p>
+        </section>
+    </div>
+    <dialog id="infoDialog" class="info-dialog" aria-label="Game details"></dialog>
+    <div id="banners" aria-live="polite"></div>
+    <script type="module" src="assets/play.js"></script>
+<noscript><p class="ejs-warnbar">This site needs JavaScript to run the emulators. Please turn it on.</p></noscript>
+<script src="assets/polish.js" defer></script>
+</body>
+</html>

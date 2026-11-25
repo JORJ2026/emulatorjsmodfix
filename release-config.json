@@ -1,0 +1,69 @@
+{
+    "format": "ejs-release-1",
+    "productName": "EmulatorJS",
+    "version": "4.3.0-local.40",
+    "repo": "",
+    "repoNote": "Leave empty on GitHub Pages: the owner and repository are read from the page address. Or run: node tools/set-repo.mjs OWNER/REPO",
+    "files": {
+        "windows": [
+            {
+                "label": "Windows installer (.exe)",
+                "match": "-win-x64-setup\\.exe$"
+            },
+            {
+                "label": "Windows portable (.exe, no install)",
+                "match": "-win-x64-portable\\.exe$"
+            }
+        ],
+        "mac": [
+            {
+                "label": "macOS disk image (.dmg)",
+                "match": "-mac-universal\\.dmg$"
+            },
+            {
+                "label": "macOS zip",
+                "match": "-mac-universal\\.zip$"
+            }
+        ],
+        "linux": [
+            {
+                "label": "Linux AppImage (any distro)",
+                "match": "-linux-x86_64\\.AppImage$"
+            },
+            {
+                "label": "Debian / Ubuntu (.deb)",
+                "match": "-linux-amd64\\.deb$"
+            },
+            {
+                "label": "Fedora / openSUSE (.rpm)",
+                "match": "-linux-x86_64\\.rpm$"
+            }
+        ],
+        "android": [
+            {
+                "label": "Android package (.apk)",
+                "match": "-android\\.apk$"
+            }
+        ],
+        "ios": [
+            {
+                "label": "Xcode project for iPhone/iPad (.zip)",
+                "match": "-ios-xcode-project\\.zip$"
+            }
+        ],
+        "other": [
+            {
+                "label": "Offline website copy (.zip)",
+                "match": "-site-offline\\.zip$"
+            },
+            {
+                "label": "Player guide (PDF)",
+                "match": "Player-Guide\\.pdf$"
+            },
+            {
+                "label": "Checksums (SHA-256)",
+                "match": "SHA256SUMS\\.txt$"
+            }
+        ]
+    }
+}

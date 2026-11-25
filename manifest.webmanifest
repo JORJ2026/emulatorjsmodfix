@@ -1,0 +1,172 @@
+{
+    "id": "./",
+    "name": "EmulatorJS",
+    "short_name": "EmulatorJS",
+    "description": "Play retro games in your browser. Runs from local files and works offline.",
+    "start_url": "./",
+    "scope": "./",
+    "display": "standalone",
+    "orientation": "any",
+    "background_color": "#111418",
+    "theme_color": "#111418",
+    "icons": [
+        {
+            "src": "assets/icons/icon-48.png",
+            "sizes": "48x48",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/icons/icon-72.png",
+            "sizes": "72x72",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/icons/icon-96.png",
+            "sizes": "96x96",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/icons/icon-128.png",
+            "sizes": "128x128",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/icons/icon-144.png",
+            "sizes": "144x144",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/icons/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/icons/icon-256.png",
+            "sizes": "256x256",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/icons/icon-384.png",
+            "sizes": "384x384",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/icons/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/icons/maskable-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "assets/icons/maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ],
+    "lang": "en",
+    "categories": [
+        "games",
+        "entertainment"
+    ],
+    "display_override": [
+        "window-controls-overlay",
+        "standalone"
+    ],
+    "prefer_related_applications": false,
+    "shortcuts": [
+        {
+            "name": "Play a game",
+            "short_name": "Play",
+            "url": "play.html",
+            "icons": [
+                {
+                    "src": "assets/icons/icon-96.png",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Homebrew games",
+            "short_name": "Homebrew",
+            "url": "homebrew.html",
+            "icons": [
+                {
+                    "src": "assets/icons/icon-96.png",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "My Collection",
+            "short_name": "Collection",
+            "url": "collection.html",
+            "icons": [
+                {
+                    "src": "assets/icons/icon-96.png",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Get the app",
+            "short_name": "Downloads",
+            "url": "download.html",
+            "icons": [
+                {
+                    "src": "assets/icons/icon-96.png",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Classroom mode",
+            "short_name": "Classroom",
+            "url": "classroom.html",
+            "icons": [
+                {
+                    "src": "assets/icons/icon-96.png",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Get the app",
+            "short_name": "Get app",
+            "url": "download.html",
+            "icons": [
+                {
+                    "src": "assets/icons/icon-96.png",
+                    "sizes": "96x96"
+                }
+            ]
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "assets/icons/social-card.png",
+            "sizes": "1200x630",
+            "type": "image/png",
+            "form_factor": "wide"
+        }
+    ],
+    "launch_handler": {
+        "client_mode": [
+            "focus-existing",
+            "auto"
+        ]
+    }
+}

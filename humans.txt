@@ -1,0 +1,12 @@
+/* TEAM */
+Project: EmulatorJS local build
+Site: see about.html
+
+/* THANKS */
+EmulatorJS project and contributors (GPL-3.0)
+Emulator core authors (see THIRD-PARTY-NOTICES.md)
+Homebrew authors credited in each game's page
+
+/* SITE */
+Standards: HTML5, CSS3, ES2017, Service Worker, Web App Manifest
+Runs from static files; no tracking, no accounts

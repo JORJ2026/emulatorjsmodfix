@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Help and support – EmulatorJS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="application-name" content="EmulatorJS">
+<meta name="msapplication-config" content="browserconfig.xml">
+<meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#111418">
+    <meta name="description" content="Fixes for common problems, and how to report one.">
+    <link rel="icon" href="docs/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="EmulatorJS">
+    <meta property="og:title" content="Help and support – EmulatorJS">
+    <meta property="og:description" content="Fixes for common problems, and how to report one.">
+    <meta property="og:image" content="assets/icons/social-card.png">
+    <meta property="og:url" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Help and support – EmulatorJS">
+    <meta name="twitter:description" content="Fixes for common problems, and how to report one.">
+    <meta name="twitter:image" content="assets/icons/social-card.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <script src="assets/early-view.js"></script>
+    <link rel="stylesheet" href="assets/app.css">
+    <link rel="stylesheet" href="assets/download.css">
+<link rel="stylesheet" href="assets/polish.css">
+<noscript><style>.ejs-nojs{display:block!important}</style></noscript>
+</head>
+<body>
+    <main class="dl-page" style="max-width:46rem">
+        <a class="button" href="index.html">&#8592; Home</a>
+        <h1>Help and support</h1>
+
+        <section class="card"><h2>Common problems</h2>
+        <details><summary>No sound</summary><p>Click or tap the game once (browsers block sound until you do). Check F9 (mute) and the per-game volume in the F1 panel.</p></details>
+        <details><summary>A game shows a black screen</summary><p>Open the game info box and switch core, or press F1 and check the notices list. Make sure the file is for the system you chose.</p></details>
+        <details><summary>It is slow or stutters</summary><p>Press Shift+F9 to lower the performance mode, or use the speed test in the F1 panel. Turn on hardware acceleration in your browser settings.</p></details>
+        <details><summary>PSP, DOS or 3DS games do not start</summary><p>These cores need threaded WebAssembly. Reload the page once, use a current Chrome, Edge or Firefox, and open the page from https or localhost.</p></details>
+        <details><summary>My saves disappeared</summary><p>Saves live in this browser. Clearing site data, private browsing, or a different browser or device starts empty. Export your options and save files regularly.</p></details>
+        <details><summary>The installed app shows an old version</summary><p>Close and reopen it twice. The app updates itself in the background; the second open uses the new files. The About page shows the version.</p></details>
+        <details><summary>A Windows or Mac warning appears</summary><p>Unsigned community builds trigger it. Compare the file with <code>SHA256SUMS.txt</code> on the release page, then choose <i>Run anyway</i> (Windows) or right-click, <i>Open</i> (Mac).</p></details>
+        <details><summary>Game Boy Advance, SNES or other cores say "Error downloading core"</summary><p>The core files in <code>data/cores/</code> are missing on this copy of the site. See the status page.</p></details></section>
+        <section class="card"><h2>Check this device</h2><p><a class="button" href="status.html">Open the status check</a></p></section>
+        <section class="card"><h2>Report a problem</h2><p>Use <b>Report a problem</b> in the F1 panel (Install and downloads), or <a id="issueLink" href="#">open the issue form</a>. Please say what you did, what you expected and what happened. Do not attach game files.</p></section>
+
+        <p class="dl-note"><a href="download.html">Get the app</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="about.html">About</a> &middot; <a href="support.html">Help</a> &middot; <a href="status.html">Status</a></p>
+    </main>
+<script>
+(function () { var m = location.hostname.match(/^([^.]+)\.github\.io$/); var a = document.getElementById("issueLink");
+  if (m) a.href = "https://github.com/" + m[1] + "/" + (location.pathname.split("/").filter(Boolean)[0] || m[1] + ".github.io") + "/issues/new";
+  else a.removeAttribute("href"); })();
+</script>
+<noscript><p class="ejs-warnbar">This site needs JavaScript to run the emulators. Please turn it on.</p></noscript>
+<script src="assets/polish.js" defer></script>
+</body>
+</html>
